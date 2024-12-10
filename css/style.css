@@ -1,0 +1,353 @@
+body {
+    margin: 0;
+    background: linear-gradient(
+        to right,
+        rgb(21, 21, 21),
+        rgb(41, 3, 3)
+    );
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: rgb(204, 6, 6);
+    padding: 10px 20px;
+    width: 100%;
+    height: 40px;
+    position: fixed;
+    top: 0;
+    z-index: 1000; /* Ensure navbar stays on top */
+    margin-bottom: 30%;
+}
+
+/* Container for navbar items */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Logo near homepage words */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 120px;
+    height: 80px;
+    margin-right: 5px;
+}
+
+/* Navigation links */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    margin: 0 18px;
+    padding: 10px 15px; /* Add padding for clickable area */
+    border-radius: 5px; /* Optional: Add border radius for rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+nav a:hover {
+    background-color: black; /* Change background to black when hovered */
+    color: white; /* Ensure text color stays white on hover */
+}
+
+/* Search bar and right-side icons */
+.search-form {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 6px;
+    padding: 5px;
+}
+
+#searchBox {
+    font-size: 16px;
+    border: none;
+    padding: 10px;
+    width: 900px;
+    border-radius: 5px;
+    margin-left: 26%;
+}
+
+#searchButton {
+    width: 25px;
+    height: 25px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+#searchButton:hover {
+    filter: brightness(9.9);
+}
+
+#notifBox {
+    width: 40px;
+    height: 40px;
+    margin-left: 30px;
+    object-fit: cover;
+}
+
+#notifBox:hover {
+    filter: brightness(3.7);
+    -webkit-filter: brightness(3.7);
+}
+
+#profileBox {
+    width: 40px;
+    height: 40px;
+    margin-left: 15px;
+    object-fit: cover;
+}
+
+#profileBox:hover {
+    filter: brightness(1.2);
+    -webkit-filter: brightness(1.2);
+}
+
+/* Right side of navbar */
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Make the navigation responsive */
+@media (max-width: 768px) {
+    nav {
+        display: none; /* Hide the nav links on small screens */
+    }
+    
+    .nav-left img {
+        width: 90px;
+        height: 60px;
+    }
+}
+@media (max-width: 768px) {
+    .navbar {
+        height: auto;
+        padding: 15px;
+    }
+
+    nav a {
+        margin: 0 10px;
+    }
+
+    .search-form {
+        width: 100%;
+    }
+
+    .footer-col {
+        width: 50%;
+    }
+}
+
+/* Footer Styles */
+.footer {
+    box-sizing: border-box;
+    background-color: black;
+    padding: 70px 0;
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col h4::before {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbb;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #ffffff;
+    padding-left: 8px;
+}
+
+.footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+    color: #24262b;
+    background-color: #ffffff;
+}
+
+/* Responsive Styles */
+@media (max-width: 574px) {
+    .footer-col {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Video Container (e.g., Trailer) */
+.video-container {
+    position: fixed;
+    top: 200px;
+    right: 180px;
+    width: 400px;
+    height: auto;
+    z-index: 1000;
+}
+
+.trailer {
+    width: 100%;
+    height: 225px;
+    border: none;
+}
+
+/* Title Styles */
+.title h5 {
+    margin: 3.6%;
+    color: rgb(255, 255, 255);
+    font-size: 200%;
+}
+
+.title h6 {
+    size: 150%;
+    margin: 2%;
+}
+
+/* Container for stars and genre */
+.container {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 12.5%;
+    left: 18%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+}
+
+.checked {
+    color: rgb(224, 149, 10);
+}
+
+.genre {
+    color: white;
+    background-color: #080808;
+    border-radius: 38%;
+    padding: 1px 10px;
+    display: inline-block;
+    line-height: 0%;
+    position: absolute;
+    top: 13.5%;
+    transform: translate(-50%, -50%);
+    margin-left: 5%;
+}
+
+.genre:hover {
+    color: rgb(255, 49, 77);
+    cursor: pointer;
+    filter: brightness(20%);
+    -webkit-filter: brightness(20%);
+    box-shadow: #161616;
+}
+
+/* Poster Styles */
+.poster {
+    display: grid;
+    place-items: center;
+    height: 50vh;
+    width: 70%;
+}
+
+/* Details Container */
+.containerdetails {
+    position: relative;
+    width: 900px;
+    height: 200px;
+    margin-left: 7%;
+}
+
+/* Details Text */
+.details {
+    color: rgba(202, 202, 202, 0.377);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 130%;
+    text-align: left;
+    padding: 10px;
+}
+
+/* Book Ticket Button */
+.BookTicket {
+    display: flex;
+    justify-content: flex-end;
+    border-radius: 14%;
+    position: relative;
+    padding: 20px;
+    margin-right: 10%;
+    margin-bottom: 0%;
+}
+
+.BookTicket button {
+    color: rgb(255, 255, 255);
+    font-size: 100%;
+    background-color: rgb(226, 0, 0);
+    cursor: pointer;
+    transition: background-color 0.3s;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+

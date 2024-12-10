@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Timings</title>
+
+    <link rel="stylesheet" href="../css/Timings.css">
+
+</head>
+
+
+</head>
+<body>
+    <body>
+
+        <div>
+            <div class="navbar">
+        
+                <!--N a v i g a t i o n-->
+                
+                <!--logo-->
+                <div class="nav-left"> 
+                 <img src="logo.png" alt="logo" class="logo">
+                </div>
+        
+                <!--navigation texts / links -->
+              <div class="nav-center"> 
+                 <nav>
+                    
+                       <a href="#Home" class="home-button">Home</a>
+                       <a href="#Schedule" class="schedule-button">Schedule</a>
+                       <a href="#Cinemas" class="cinemas-button">Cinemas</a>
+                       <a href="#Category" class="category-button">Category</a>
+                  
+                 </nav>
+                
+
+                </div>
+                
+              <form class="nav-right">
+                    <input type="search"  id="searchBox" placeholder="Search....">
+                  
+                    <input type="image" src="search (1).png" alt="search" id="searchButton">
+        
+                </form>
+                
+              <div class="nav-right">
+                    <a href="#notification"><img src="notif (1).png" id="notifBox" alt="Notifications"></a>
+                    <a href="profile"><img src="profile (1).png" id="profileBox" alt="Profile"></a>
+                </div>
+        
+
+            </div>
+
+
+
+            <div class="timings">
+                <div class="movie-type">
+                    <button class="general" >GENERAL</button>
+                    <button class="2D" >2D</button>
+                    <button class="3D" >3D</button>
+                    <button class="IMAX" >IMAX</button>
+                    <button class="ScreenX" >ScreenX</button>
+                    <button class="4DX" >4DX</button>
+                </div>
+                <br> <br>
+
+                <div class="location">
+                <label for="location">Location</label>
+                <select id="location" name="location">
+                    <option value="">Choose Cinema Location</option>
+                    <option value="Manila">Manila</option>
+                    <option value="Cebu City">Cebu City</option>
+                    <option value="Davao City">Davao City</option>
+                    <option value="Quezon City">Quezon City</option>
+                    <option value="Iloilo City">Iloilo City</option>
+                    <option value="Baguio City">Baguio City</option>
+                    <option value="Zamboanga City">Zamboanga City</option>
+                    <option value="Cagayan de Oro">Cagayan de Oro</option>
+                    <option value="Tagaytay">Tagaytay</option>
+                    <option value="Batangas City">Batangas City</option>
+                    <option value="General Santos City">General Santos City</option>
+                    <option value="Legazpi City">Legazpi City</option>
+                    <option value="Laoag City">Laoag City</option>
+                    <option value="San Fernando City">San Fernando City</option>
+                    <option value="Tarlac City">Tarlac City</option>
+                </select>
+                </div>
+                <br> <br>
+
+                <div class="date-bigBox">
+                    <label for="Day">Day</label>
+                    <select id="Day" name="Day">
+                        <option value="Monday">Mon</option>
+                        <option value="Tuesday">Tues</option>
+                        <option value="Wednesday">Wed</option>
+                        <option value="Thursday">Thurs</option>
+                        <option value="Friday">Fri</option>
+                        <option value="Satday">Sat</option>
+                        <option value="Sunday">Sun</option>
+                        
+                    </select>
+                    <label for="month">Month</label>
+                    <select id="month" name="Month">
+                        <option value="January">Jan</option>
+                        <option value="February">Feb</option>
+                        <option value="March">Mar</option>
+                        <option value="April">Apr</option>
+                        <option value="May">May</option>
+                        <option value="June">Jun</option>
+                        <option value="July">Jul</option>
+                        <option value="August">Aug</option>
+                        <option value="September">Sep</option>
+                        <option value="October">Oct</option>
+                        <option value="November">Nov</option>
+                        <option value="December">Dec</option>
+                    </select>
+                    
+                    <label for="date">Date</label>
+                    <select id="date" name="Date">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                     
+                    </select>
+                </div>
+                <br><br>
+                
+                <div class="show-time-container">
+                    <label>Show Time</label> 
+                    <div class="show-time-buttons"> 
+                      
+                       
+                        <button type="button" class="time-option" value="9:00 AM">9:00 AM</button>
+                        <button type="button" class="time-option" value="10:30 AM">10:30 AM</button>
+                        <button type="button" class="time-option" value="11:00 AM">11:00 AM</button>
+                        <button type="button" class="time-option" value="1:00 PM">1:00 PM</button>
+                        <button type="button" class="time-option" value="1:30 PM">1:30 PM</button>
+                        <button type="button" class="time-option" value="2:00 PM">2:00 PM</button>
+                        <button type="button" class="time-option" value="3:00 PM">3:00 PM</button>
+                    </div>
+                </div>
+
+
+    
+  
+    </div>
+  </footer>
+  
+
+       
+        </div>
+
+        <div>
+            <div class="button-container"> <!-- Changed to a more descriptive class name -->
+                <button onclick="goToPayment()" class="btn btn-primary">Next</button> 
+            </div>
+        
+            <script>
+                function goToPayment() {
+                    window.location.href = 'Payment.html'; // Redirect to the specified URL
+                }
+            </script>
+
+
+
+
+        </div>
+
+
+</div>

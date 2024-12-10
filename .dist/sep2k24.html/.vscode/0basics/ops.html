@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In Button Example</title>
+    <style>
+        /* General styling for the body */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            background-color: #f4f4f4; /* Light background color */
+        }
+
+        /* Container styling */
+        .container {
+            text-align: center;
+        }
+
+        /* Styling for the sign-in button */
+        .sign-in-button {
+            background-color: #4CAF50; /* Green background */
+            border: none; /* Remove default border */
+            color: white; /* White text */
+            padding: 15px 32px; /* Vertical and horizontal padding */
+            text-align: center; /* Center the text */
+            text-decoration: none; /* Remove underline */
+            display: inline-block; /* Make the button inline */
+            font-size: 16px; /* Font size */
+            margin: 4px 2px; /* Margin for spacing */
+            cursor: pointer; /* Pointer cursor on hover */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s; /* Smooth background color transition */
+        }
+
+        /* Hover effect for the button */
+        .sign-in-button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Sign In</h1>
+        <button class="sign-in-button">Sign In</button>
+    </div>
+
+    <!-- Optional JavaScript for button functionality -->
+    <script>
+        document.querySelector('.sign-in-button').addEventListener('click', function() {
+            alert('Sign In button oobhjhnclicked!');
+        });
+    </script>
+
+</body>
+</html>

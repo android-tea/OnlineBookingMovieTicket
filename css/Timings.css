@@ -1,0 +1,269 @@
+body {
+    margin: 0;
+    background: url(curtain.jpg) no-repeat center center; 
+    background-size: cover; 
+    background-attachment: fixed; 
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color:rgb(204, 6, 6);
+    padding: 10px 20px;
+    width: 100%;
+    height: 40px;
+    position: fixed;
+    top: 0;
+    z-index: 1000; /* Ensure navbar stays on top */
+    margin-bottom: 30%;
+}
+
+/* Container for navbar items */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Logo near homepage words */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 120px;
+    height: 80px;
+    margin-right: 5px;
+}
+
+/* Navigation links */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    margin: 0 18px;
+    
+}
+
+nav a:hover {
+  color: white;
+  background-color: #161616;
+  border-radius: 13%;
+  -webkit-border-radius: 13%;
+  -moz-border-radius: 13%;
+  -ms-border-radius: 13%;
+  -o-border-radius: 13%;
+}
+.schedule-button {
+   background-color: black;
+   padding: 10px 15px;
+   border-radius: 5px;
+   
+}
+/* Search bar and right-side icons */
+.search-form {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 6px;
+    padding: 5px;
+    
+}
+
+#searchBox {
+   font-size: 16px;
+   border: none;
+   padding:10px;
+   width:1150px;
+   border-radius: 5px;
+   margin-left: 50%;
+  
+}
+
+#searchButton {
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+#searchButton:hover {
+    filter:brightness(9.9);
+
+}
+
+#notifBox{
+    width: 40px;
+    height: 40px;
+    margin-left: 60px;
+    object-fit: cover;
+    
+}
+#notifBox:hover{
+    filter: brightness(3.7);
+    -webkit-filter: brightness(3.7);
+}
+#profileBox {
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+    object-fit: cover;  
+}
+#profileBox:hover {
+ filter: brightness(1.2);
+ -webkit-filter: brightness(1.2);
+}
+/* Right side of navbar */
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+.button-container {
+    display: flex; 
+    justify-content: flex-end;
+    padding: 20px; 
+    margin-right:10%;
+}
+
+.button-container button {
+    color: rgb(255, 255, 255); 
+    font-size: 100%;
+    background-color: rgb(226, 0, 0); 
+    cursor: pointer; 
+    transition: background-color 0.3s;
+    padding: 10px 20px;
+    border-radius: 10px; 
+}
+
+
+.button-container button:hover {
+    background-color: rgb(180, 0, 0); 
+}
+
+.timings {
+    margin:auto;
+    margin-top: 12%;
+    padding: 18px;
+    background-color:  #ce0c0c7d;
+    border-radius: 35px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    width:fit-content ;
+
+}
+.movie-type {
+   
+    display: flex;                  /*  for horizontal layout */
+    justify-content: center;        /* Center the buttons  */
+    flex-wrap: wrap;            
+    margin: 20px;                 
+}
+
+.movie-type button {
+    padding: 10px 20px;
+    margin:2px;
+   font-size: 16px;
+   color: white;
+   background-color:rgb(39, 5, 5);
+    border: 1px solid;
+    border-color: rgba(255, 255, 255, 0.119);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+   
+}
+
+.movie-type button:hover {
+    background-color: #b30000;    
+    transform: scale(1.05);         
+}
+
+.movie-type button:focus {
+    outline: none;               
+}
+.location {
+    color: white;
+
+    padding: 20px;
+    background-color: #530606;
+    border-radius:5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+}
+
+label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    display: block;
+    margin-bottom: 5px;
+}
+select{
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: white;
+    cursor: pointer;
+}
+.date-bigBox {
+    display: flex;
+    align-items: center; /* Align items vertically centered */
+    gap: 10px; 
+}
+.date-bigBox label {
+    margin-right: 2px; /* Space between label and select */
+}
+
+.date-bigBox select {
+    flex: 1; /* Allow the select elements to grow and fill the available space */
+    min-width: 100px; /* Set a minimum width for better usability */
+    margin: 8px;
+}
+.show-time-buttons {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center buttons horizontally */
+    flex-wrap: wrap; /* Allow buttons to wrap onto the next line */
+    margin: 10px; /* Margin around the button container */
+    padding: 10px; 
+}
+
+.time-option {
+    font-size: 16px; 
+    background-color: rgb(39, 5, 5); 
+    border: 1px solid rgba(255, 255, 255, 0.237); 
+    border-radius: 5px; 
+    color: white;
+    cursor: pointer; 
+    transition: background-color 0.3s, transform 0.2s; 
+    margin: 2px;
+    height: 50px;
+}
+
+.time-option:hover {
+    background-color: #b30000;
+    transform: scale(1.05); 
+}
+
+.time-option:focus {
+    outline: none; 
+}
+
+.label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    display: block;
+    margin:auto;
+  
+}
+
+
