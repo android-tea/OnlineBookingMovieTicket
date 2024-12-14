@@ -2,8 +2,7 @@ body {
     margin: 0;
     background: url(curtain.jpg) no-repeat center center; 
     background-size: cover; 
-    background-attachment: fixed; 
-    font-family: 'Poppins', sans-serif;
+    background-attachment: fixed;
 }
 
 
@@ -54,6 +53,8 @@ nav a {
     padding: 10px 15px; /* Add padding for clickable area */
     border-radius: 5px; /* Optional: Add border radius for rounded corners */
     transition: background-color 0.3s ease; /* Smooth transition for background color */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
 }
 
 nav a:hover {
@@ -61,39 +62,10 @@ nav a:hover {
     color: white; /* Ensure text color stays white on hover */
 }
 
-/* Search bar and right-side icons */
-.search-form {
-    display: flex;
-    align-items: center;
-    background-color: white;
-    border-radius: 6px;
-    padding: 5px;
-}
-
-#searchBox {
-    font-size: 16px;
-    border: none;
-    padding: 10px;
-    width: 900px;
-    border-radius: 5px;
-    margin-left: 10%;
-}
-
-#searchButton {
-    width: 25px;
-    height: 25px;
-    margin-left: 5px;
-    cursor: pointer;
-}
-
-#searchButton:hover {
-    filter: brightness(9.9);
-}
-
 #notifBox {
     width: 40px;
     height: 40px;
-    margin-left: 10px;
+    margin-left: 990px; 
     object-fit: cover;
 }
 

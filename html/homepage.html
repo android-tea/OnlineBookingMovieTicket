@@ -6,7 +6,7 @@
 
     <link rel="stylesheet" href="../css/homepage.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    <script src="../js/homepage.js" defer></script>
 </head>
 
 
@@ -24,24 +24,17 @@
         </div>
 
         <!--navigation texts / links -->
-      <div class="nav-center"> 
-         <nav>
-            
-               <a href="#Home">Home</a>
-               <a href="#Schedule">Schedule</a>
-               <a href="#Cinemas">Cinemas</a>
-               <a href="#Category">Category</a>
-          
-         </nav>
-         
-        </div>
-        
-      <form class="nav-right">
-            <input type="search"  id="searchBox" placeholder="Search....">
-          
-            <input type="image" src="search (1).png" alt="search" id="searchButton">
+        <div class="nav-center">
+          <nav>
 
-        </form>
+              <a href="homepage.html" id="home">Home</a>
+              <a href="schedmenu.html" id="schedule">Schedule</a>
+              <a href="cinemas.html" id="cinemas">Cinemas</a>
+              <a href="eventsandexp.html" id="eventsandexp">Events and Experiences</a>
+          
+          </nav>
+      </div>
+
         
       <div class="nav-right">
             <a href="#notification"><img src="notif (1).png" id="notifBox" alt="Notifications"></a>
@@ -68,73 +61,92 @@
       "Your next movie adventure is just a click away!
        Enjoy fast booking and let the show begin!" </h3>
     </blockquote>
-    <a href="#"  class="book-now-button">Book Now</a>
+    <a href="eventsandexp.html"  class="book-now-button">Book Now</a>
 </div>
 
 
-<!--CATEGORY-->
-<section>
 
-  <H2>Category</H2>
-  <div class="bodycontent">
-    <div class="movie-poster">
 
-      <img src="nam.jpg" alt="Category">
+ <!--COMING SOON-->
+    <section>
+      <h2>Coming Soon!</h2>
 
-      <br>
-      <button class="navButton">Drama</button>
-      </div>
+    </section>
+
+
+    <div class="bodycontent">
 
       <div class="movie-poster">
 
-        <img src="Parasite.jpg" alt="Categoryr">
-       
+        <img src="GreatestShowman.jpg" alt="Movie 1 Poster">
+        <small>Greatest Showman </small>
         <br>
-        <button class="navButton">Horror</button>
+        <button class="navButton" id="comingSoonButton1">Coming Soon!</button>
         </div>
 
-      <div class="movie-poster">
+        <div class="movie-poster">
 
-          <img src="LittleWomen.jpg" alt="Category">
-         
+          <img src="lesserafim.jpg" alt="Movie 2 Poster">
+          <small>Unforgiven</small>
           <br>
-          <button class="navButton">Documentary</button>
+          <button class="navButton" id="comingSoonButton2">Coming Soon!</button>
           </div>
 
-      <div class="movie-poster">
+        <div class="movie-poster">
 
-      <img src="Spiderman.jpg" alt="Category">
-     
-      <br>
-      <button onclick="location.href='movieClicked.html'" class="navButton">Action</button>
+         <img src="nam.jpg" alt="Movie 3 Poster">
+         <small>Dat Rung </small>
+          <br>
+          <button class="navButton" id="comingSoonButton3">Coming Soon!</button>          </div>
+
+        <div class="movie-poster">
+
+        <img src="HarryPotter.jpg" alt="Movie 4 Poster">
+        <small>Harry Potter </small>
+        <br>
+        <button class="navButton" id="comingSoonButton4">Coming Soon!</button>        </div>
+
+        <div class="movie-poster">
+
+        <img src="Joker.jpg" alt="Movie 5 Poster">
+        <small>Joker </small>
+        <br>
+        <button class="navButton" id="comingSoonButton5">Coming Soon!</button>
+        </div>
+
+        <div class="movie-poster">
+
+          <img src="LittleWomen.jpg" alt="Movie 6 Poster">
+          <small>Little Women </small>
+        <br>
+        <button class="navButton" id="comingSoonButton6">Coming Soon!</button>
+        </div>
+
+        <div class="movie-poster">
+
+          <img src="Parasite.jpg" alt="Movie 7 Poster">
+          <small>Parasite </small>
+        <br>
+        <button class="navButton" id="comingSoonButton7">Coming Soon!</button>
+        </div>
+
+
+        <!--COMING SOON BUTTON when they click the button-->
+        <div id="comingSoonModal" class="modal">
+          <div class="modal-content">
+            <p>Coming Soon! </p>
+            <br>
+            <span class="close-button">Close &times;</span>
+          
+          </div>
+        </div>
+
+
 
       </div>
+</div>
 
-      <div class="movie-poster">
 
-      <img src="GirlsNight.jpg" alt="Category">
-     
-      <br>
-      <button class="navButton">Comedy</button>
-      </div>
-
-      <div class="movie-poster">
-
-       <img src="Adventure.jpg" alt="Category">
-      
-      <br>
-      <button class="navButton">Fantasy</button>
-      </div>
-
-      <div class="movie-poster">
-
-        <img src="Tangled.jpg"  alt="Category">
-        
-      <br>
-      <button class="navButton">Romance</button>
-      </div>
-
-  </div>
 
 
 <!--N O W   S H O W I N G -->
@@ -149,15 +161,17 @@
         <img src="killBill.jpg" alt="Movie 1 Poster">
         <small>Kill Bill </small>
         <br>
-        <button class="navButton">View Movie!</button>
+        <button onclick="location.href='movieClicked3.html'" class="navButton">View Movie!</button>
+        
         </div>
 
         <div class="movie-poster">
 
-          <img src="nam.jpg" alt="Movie 2 Poster">
+          <img src="Tangled.jpg" alt="Movie 2 Poster">
           <small>Dat Rung </small>
           <br>
-          <button class="navButton">View Movie!</button>
+          <button onclick="location.href='movieClicked4.html'" class="navButton">View Movie!</button>
+        
           </div>
 
         <div class="movie-poster">
@@ -182,7 +196,8 @@
         <img src="BeautyandtheBeast.jpg" alt="Movie 5 Poster">
         <small>Beauty & Beast</small>
         <br>
-        <button class="navButton">View Movie!</button>
+        <button onclick="location.href='movieClicked5.html'" class="navButton">View Movie!</button>
+        
         </div>
 
         <div class="movie-poster">
@@ -190,7 +205,8 @@
          <img src="Adventure.jpg" alt="Movie 6 Poster">
          <small>Archer </small>
         <br>
-        <button class="navButton">View Movie!</button>
+        <button onclick="location.href='movieClicked6.html'" class="navButton">View Movie!</button>
+        
         </div>
 
         <div class="movie-poster">
@@ -198,84 +214,81 @@
           <img src="Ponyo.jpg"  alt = "Movie 7 Posters">
           <small>Ponyo </small>
         <br>
-        <button class="navButton">View Movie!</button>
+        <button onclick="location.href='movieClicked7.html'" class="navButton">View Movie!</button>
+        
         </div>
 
     </div>
 
       </div>
- <!--COMING SOON-->
-    <section>
-      <h2>Coming Soon!</h2>
-
-    </section>
 
 
-    <div class="bodycontent">
+
+<!--CATEGORY-->
+<section>
+
+  <H2>Category</H2>
+  <div class="bodycontent">
+    <div class="movie-poster">
+
+      <img src="kids.jpg" alt="Category">
+
+      <br>
+      <button class="navButton">Kids</button>
+      </div>
 
       <div class="movie-poster">
 
-        <img src="Joker.jpg" alt="Movie 1 Poster">
-        <small>Joker </small>
+        <img src="horror.jpg" alt="Categoryr">
+       
         <br>
-        <button class="navButton">Coming Soon!</button>
+        <button class="navButton">Horror</button>
         </div>
 
-        <div class="movie-poster">
+      <div class="movie-poster">
 
-          <img src="Ponyo.jpg" alt="Movie 2 Poster">
-          <small>Ponyo</small>
+          <img src="docu.jpg" alt="Category">
+         
           <br>
-          <button class="navButton">Coming Soon!</button>
+          <button class="navButton">Documentary</button>
           </div>
 
-        <div class="movie-poster">
+      <div class="movie-poster">
 
-            <img src="Tangled.jpg" alt="Movie 3 Poster">
-            <small>Tangled </small>
-            <br>
-            <button class="navButton">Coming Soon!</button>
-            </div>
+      <img src="action.jpg" alt="Category">
+     
+      <br>
+      <button onclick="location.href='movieClicked.html'" class="navButton">Action</button>
 
-        <div class="movie-poster">
+      </div>
 
-        <img src="HarryPotter.jpg" alt="Movie 4 Poster">
-        <small>Harry Potter </small>
-        <br>
-        <button class="navButton">Coming Soon!</button>
-        </div>
+      <div class="movie-poster">
 
-        <div class="movie-poster">
+      <img src="girly.jpg" alt="Category">
+     
+      <br>
+      <button class="navButton">Comedy</button>
+      </div>
 
-        <img src="Joker.jpg" alt="Movie 5 Poster">
-        <small>Joker </small>
-        <br>
-        <button class="navButton">Coming Soon!</button>
-        </div>
+      <div class="movie-poster">
 
-        <div class="movie-poster">
+       <img src="action.jpg" alt="Category">
+      
+      <br>
+      <button class="navButton">Fantasy</button>
+      </div>
 
-          <img src="LittleWomen.jpg" alt="Movie 6 Poster">
-          <small>Little Women </small>
-        <br>
-        <button class="navButton">Coming Soon!</button>
-        </div>
+      <div class="movie-poster">
 
-        <div class="movie-poster">
+        <img src="romance.jpg"  alt="Category">
+        
+      <br>
+      <button class="navButton">Romance</button>
+      </div>
 
-          <img src="Parasite.jpg"Movie 7 Poster>
-          <small>Parasite </small>
-        <br>
-        <button class="navButton">Coming Soon!</button>
-        </div>
+  </div>
 
-
-
-    </div>
-
-
-</div>
-
+<!--FOOTER-->
 
 <footer class="footer">
   <div class="container">
@@ -316,6 +329,7 @@
 </footer>
     
 </body>
+
 
 
 </html>

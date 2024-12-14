@@ -7,6 +7,7 @@ body {
     );
 }
 
+
 .navbar {
     display: flex;
     align-items: center;
@@ -21,87 +22,57 @@ body {
 }
 
 /* Container for navbar items */
+
 .nav-container {
-    display: flex;
-    justify-content: space-between;
+    display:flex;
+    justify-content:space-between;
     align-items: center;
     width: 100%;
 }
-
-/* Logo near homepage words */
 .logo-container {
     display: flex;
     align-items: center;
 }
-
 .logo {
     width: 120px;
     height: 80px;
     margin-right: 5px;
 }
-
-/* Navigation links */
 nav {
     display: flex;
     align-items: center;
 }
-
 nav a {
     color: white;
     font-size: 18px;
     text-decoration: none;
     margin: 0 18px;
-    padding: 10px 15px; /* Add padding for clickable area */
-    border-radius: 5px; /* Optional: Add border radius for rounded corners */
-    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    padding:10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 nav a:hover {
     background-color: black; /* Change background to black when hovered */
     color: white; /* Ensure text color stays white on hover */
 }
-
-/* Search bar and right-side icons */
-.search-form {
-    display: flex;
-    align-items: center;
-    background-color: white;
-    border-radius: 6px;
-    padding: 5px;
-}
-
-#searchBox {
-    font-size: 16px;
-    border: none;
-    padding: 10px;
-    width: 900px;
-    border-radius: 5px;
-    margin-left: 26%;
-}
-
-#searchButton {
-    width: 25px;
-    height: 25px;
-    margin-left: 5px;
-    cursor: pointer;
-}
-
-#searchButton:hover {
-    filter: brightness(9.9);
-}
-
 #notifBox {
-    width: 40px;
-    height: 40px;
-    margin-left: 30px;
-    object-fit: cover;
+    width: 30px;  /* Set a smaller width */
+    height: 30px;  /* Set a smaller height */
+    margin-left: 990px; 
+    object-fit: cover;  /* Maintain aspect ratio */
 }
 
 #notifBox:hover {
     filter: brightness(3.7);
     -webkit-filter: brightness(3.7);
 }
+/*----KUNG NASAAN KANG PAGE, doon may bg black----*/
+#schedule {
+    background-color: black;
 
+}
 #profileBox {
     width: 40px;
     height: 40px;
@@ -113,7 +84,6 @@ nav a:hover {
     filter: brightness(1.2);
     -webkit-filter: brightness(1.2);
 }
-
 /* Right side of navbar */
 .nav-right {
     display: flex;
@@ -140,11 +110,6 @@ nav a:hover {
     nav a {
         margin: 0 10px;
     }
-
-    .search-form {
-        width: 100%;
-    }
-
     .footer-col {
         width: 50%;
     }
