@@ -60,13 +60,11 @@ nav a {
 nav a:hover {
     background-color: black; /* Change background to black when hovered */
     color: white; /* Ensure text color stays white on hover */
-}
-
-#notifBox {
-    width: 40px;
-    height: 40px;
-    margin-left: 990px; 
-    object-fit: cover;
+}#notifBox {
+    width: 30px !important;  
+    height: 30px !important; 
+    margin-left: 860px !important; 
+    object-fit: cover !important; 
 }
 
 #notifBox:hover {

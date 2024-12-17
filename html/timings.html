@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schedule Timings</title>
-
     <link rel="stylesheet" href="../css/Timings.css">
+    <script src="../js/timings.js"></script>
 </head>
 <body>
 
@@ -13,7 +13,7 @@
         <div class="navbar">
             <!-- Navigation -->
             <div class="nav-left"> 
-                <img src="logo.png" alt="logo" class="logo">
+                <img src="../pics/logo.png" alt="logo" class="logo">
             </div>
             <div class="nav-center">
                 <nav>
@@ -24,110 +24,162 @@
                 </nav>
             </div>
             <div class="nav-right">
-                <a href="#notification"><img src="notif (1).png" id="notifBox" alt="Notifications"></a>
-                <a href="profile"><img src="profile (1).png" id="profileBox" alt="Profile"></a>
+                <a href="#notification"><img src="../pics/notif (1).png" id="notifBox" alt="Notifications"></a>
+                <a href="profile"><img src="../pics/profile (1).png" id="profileBox" alt="Profile"></a>
             </div>
         </div>
-        <div class="timings">
-            <div class="movie-type">
-                <button onclick="toggleActive(this)" class="general">GENERAL</button>
-                <button onclick="toggleActive(this)" class="2D">2D</button>
-                <button onclick="toggleActive(this)" class="3D">3D</button>
-                <button onclick="toggleActive(this)" class="IMAX">IMAX</button>
-                <button onclick="toggleActive(this)" class="ScreenX">ScreenX</button>
-                <button onclick="toggleActive(this)" class="4DX">4DX</button>
-            </div>
-      
         
-            <br><br>
-
-            <div class="location">
-                <label for="location">Location</label>
-                <select id="location" name="location">
-                    <option value="">Choose Cinema Location</option>
-                    
-
-                    
-                </select>
-            </div>
-            <br><br>
-
-            <div class="date-bigBox">
-                <label for="Day">Day</label>
-                <select id="Day" name="Day">
-                    <!-- Days options -->
-                </select>
-                <label for="month">Month</label>
-                <select id="month" name="Month">
-                    <!-- Month options -->
-                </select>
-                <label for="date">Date</label>
-                <select id="date" name="Date">
-                    <!-- Date options -->
-                </select>
-            </div>
-            <br><br>
-
-            <div class="show-time-container">
-                <label>Show Time</label> 
-                <div class="show-time-buttons">
-                    <button onclick="toggleActive(this)" class="time-option">9:00 AM</button>
-                    <button onclick="toggleActive(this)" class="time-option">9:45 AM</button>
-                    <button onclick="toggleActive(this)" class="time-option">10:00 AM</button>
-                    <button onclick="toggleActive(this)" class="time-option">11:00 AM</button>
-                    <button onclick="toggleActive(this)" class="time-option">12:45 PM</button>
-                    <button onclick="toggleActive(this)" class="time-option">1:00 PM</button>
-                    <button onclick="toggleActive(this)" class="time-option">2:40 PM</button>
-                    <button onclick="toggleActive(this)" class="time-option">5:00 PM</button>
+        <!-- Main Form -->
+        <form id="timingsForm" onsubmit="redirectToConfirmation(event)" class="timings-form">
+            <div class="timings">
+                <div class="movie-type">
+                    <button type="button" onclick="toggleActive(this)" class="general">GENERAL</button>
+                    <button type="button" onclick="toggleActive(this)" class="2D">2D</button>
+                    <button type="button" onclick="toggleActive(this)" class="3D">3D</button>
+                    <button type="button" onclick="toggleActive(this)" class="IMAX">IMAX</button>
+                    <button type="button" onclick="toggleActive(this)" class="ScreenX">ScreenX</button>
+                    <button type="button" onclick="toggleActive(this)" class="4DX">4DX</button>
                 </div>
-            </div>
-        </div>
+        
+                <br><br>
+                <div class="location">
+                    <label for="location">Location</label>
+                    <select id="location" name="location" required>
+                        <option value="">Choose Cinema Location</option>
+                        <option value="Taguig City">Taguig City</option>
+                        <option value="Tagaytay">Tagaytay</option>
+                        <option value="Cavite">Cavite</option>
+                        <option value="Bulacan">Bulacan</option>
+                        <option value="Makati City">Makati City</option>
+                        <option value="Quezon City">Quezon City</option>
+                        <option value="Pasig City">Pasig City</option>
+                        <option value="Las Piñas">Las Piñas</option>
+                        <option value="Parañaque">Parañaque</option>
+                        <option value="Marikina">Marikina</option>
+                        <option value="Cebu City">Cebu City</option>
+                        <option value="Davao City">Davao City</option>
+                        <option value="Iloilo City">Iloilo City</option>
+                        <option value="Baguio City">Baguio City</option>
+                        <option value="Antipolo City">Antipolo City</option>
+                        <option value="Muntinlupa">Muntinlupa</option>
+                        <option value="San Juan City">San Juan City</option>
+                        <option value="Zamboanga City">Zamboanga City</option>
+                        <option value="Laoag City">Laoag City</option>
+                        <option value="Tarlac City">Tarlac City</option>
+                        
+                    </select>
+                </div>
+            
+                <!-- Date Selector -->
+                <div class="date-bigBox">
+                    <label for="Day">Day</label>
+                    <select id="Day" name="Day" required>
+                        <option value="Monday">Monday</option>
+                        <option value="Tuesday">Tuesday</option>
+                        <option value="Wednesday">Wednesday</option>
+                        <option value="Thursday">Thursday</option>
+                        <option value="Friday">Friday</option>
+                        <option value="Saturday">Saturday</option>
+                        <option value="Sunday">Sunday</option>
+                    </select>
+            
+                    <label for="Month">Month</label>
+                    <select id="Month" name="Month" required>
+                        <option value="December">December</option>
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                    </select>
+            
+                    <label for="Date">Date</label>
+                    <select id="Date" name="Date" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                    </select>
+                </div>
+                <br><br>
+                <div class="show-time-container">
+                    <label>Show Time</label>
+                    <div class="show-time-buttons">
+                        <button type="button" onclick="setShowTime('9:00 AM')" class="time-option">9:00 AM</button>
+                        <button type="button" onclick="setShowTime('12:00 PM')" class="time-option">12:00 PM</button>
+                        <button type="button" onclick="setShowTime('3:00 PM')" class="time-option">3:00 PM</button>
+                        <button type="button" onclick="setShowTime('4:00 PM')" class="time-option">4:00 PM</button>
+                        <button type="button" onclick="setShowTime('5:00 PM')" class="time-option">5:00 PM</button>
+                        <button type="button" onclick="setShowTime('6:00 PM')" class="time-option">6:00 PM</button>
+                        <button type="button" onclick="setShowTime('7:00 PM')" class="time-option">7:00 PM</button>
+                    </div>
+                    <input type="hidden" id="showTime" name="showTime" required>
+                </div>
 
-        <footer>
-            <div class="button-container">
-                <button onclick="goToPayment()" class="btn btn-primary">Next</button>
+                
             </div>
-        </footer>
-
+            
+            <!-- Footer -->
+            <footer>
+                <div class="button-container">
+                    <button type="submit" class="btn btn-primary">Next</button>
+               </div>
+            </footer>
+        </form>
     </div>
 
     <script>
-        function goToPayment() {
-            window.location.href = 'Payment.html';
+        // Set selected showtime in hidden input
+        function setShowTime(time) {
+            document.getElementById('showTime').value = time;
         }
 
-        function toggleActive(button) {
-            let buttons = document.querySelectorAll('.time-option');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
+        // Redirect to confirmation page with URL parameters
+        function redirectToConfirmation(event) {
+            event.preventDefault();
 
-            let selectedTime = button.innerText;
-            storeSelectedTime(selectedTime);
+            const location = document.getElementById('location').value;
+            const day = document.getElementById('Day').value;
+            const month = document.getElementById('Month').value;
+            const date = document.getElementById('Date').value;
+            const showTime = document.getElementById('showTime').value;
+
+            const queryString = `?location=${encodeURIComponent(location)}&day=${encodeURIComponent(day)}&month=${encodeURIComponent(month)}&date=${encodeURIComponent(date)}&showTime=${encodeURIComponent(showTime)}`;
+            window.location.href = `test2.html${queryString}`;
         }
-
-        function storeSelectedTime(time) {
-            fetch('/store-selected-time', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ time: time })
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Time saved:', data);
-            })
-            .catch(error => {
-                console.error('Error saving time:', error);
-            });
-        }
-
-        function toggleActive(button) {
-    let buttons = document.querySelectorAll('.movie-type button');
-    buttons.forEach(btn => btn.classList.remove('active')); // Remove 'active' class from all buttons
-    button.classList.add('active'); // Add 'active' class to clicked button
-}
-
     </script>
 
 </body>

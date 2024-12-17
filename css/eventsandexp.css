@@ -53,13 +53,13 @@ nav a {
 nav a:hover {
     background-color: black; /* Change background to black when hovered */
     color: white; /* Ensure text color stays white on hover */
+}#notifBox {
+    width: 30px !important;  
+    height: 30px !important; 
+    margin-left: 860px !important; 
+    object-fit: cover !important; 
 }
-#notifBox {
-    width: 30px;  /* Set a smaller width */
-    height: 30px;  /* Set a smaller height */
-    margin-left: 990px; 
-    object-fit: cover;  /* Maintain aspect ratio */
-}
+
 
 #notifBox:hover {
     filter: brightness(3.7);

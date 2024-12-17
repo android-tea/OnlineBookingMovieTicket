@@ -25,3 +25,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+document.querySelector('.arrow-left').addEventListener('click', function() {
+  const posterContent = document.querySelector('.poster-content');
+  posterContent.scrollBy({ left: -300, behavior: 'smooth' }); // Adjust the number to control scroll distance
+});
+
+document.querySelector('.arrow-right').addEventListener('click', function() {
+  const posterContent = document.querySelector('.poster-content');
+  posterContent.scrollBy({ left: 300, behavior: 'smooth' }); // Adjust the number to control scroll distance
+});

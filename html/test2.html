@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Ticket Details</title>
+    <link rel="stylesheet" href="../css/confirm.css">
+</head>
+<body>
+    <div class="confirmation">
+        <h3>Confirm Your Ticket Details</h3>
+        <p><strong>Location:</strong> <span id="location"></span></p>
+        <p><strong>Day:</strong> <span id="day"></span></p>
+        <p><strong>Month:</strong> <span id="month"></span></p>
+        <p><strong>Date:</strong> <span id="date"></span></p>
+        <p><strong>Show Time:</strong> <span id="showTime"></span></p>
+
+        <div class="buttons">
+            <button onclick="goBack()">Edit Details</button>
+            <button onclick="confirmDetails()">Confirm Booking</button>
+        </div>
+    </div>
+
+    <script>
+        // Retrieve and display URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        document.getElementById('location').textContent = urlParams.get('location');
+        document.getElementById('day').textContent = urlParams.get('day');
+        document.getElementById('month').textContent = urlParams.get('month');
+        document.getElementById('date').textContent = urlParams.get('date');
+        document.getElementById('showTime').textContent = urlParams.get('showTime');
+
+        function goBack() {
+            // Redirect back to the input page
+            window.history.back();
+        }
+
+        function confirmDetails() {
+            // Generate random ticket number
+            const ticketNumber = Math.floor(Math.random() * 900000) + 100000;
+
+            // Redirect to final ticket receipt page
+            const queryString = `?location=${urlParams.get('location')}&day=${urlParams.get('day')}&month=${urlParams.get('month')}&date=${urlParams.get('date')}&showTime=${urlParams.get('showTime')}&ticketNumber=${ticketNumber}`;
+            window.location.href = `ticket_receipt.html${queryString}`;
+        }
+    </script>
+</body>
+</html>

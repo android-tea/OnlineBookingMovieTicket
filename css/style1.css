@@ -59,10 +59,10 @@ nav a:hover {
     color: white; /* Ensure text color stays white on hover */
 }
 #notifBox {
-    width: 30px;  /* Set a smaller width */
-    height: 30px;  /* Set a smaller height */
-    margin-left: 850px;  /* Adjust margin if needed */
-    object-fit: cover;  /* Maintain aspect ratio */
+    width: 30px !important;  
+    height: 30px !important; 
+    margin-left: 860px !important; 
+    object-fit: cover !important; 
 }
 
 #notifBox:hover {

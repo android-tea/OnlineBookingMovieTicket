@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Receipt</title>
+    <link rel="stylesheet" href="../css/receipt.css">
+</head>
+<body>
+    <div>
+        <div class="navbar">
+            <div class="nav-left"> 
+                <img src="../pics/logo.png" alt="logo" class="logo">
+            </div>
+            <div class="nav-center">
+                <nav>
+                    <a href="homepage.html" id="home">Home</a>
+                    <a href="schedmenu.html" id="schedule">Schedule</a>
+                    <a href="cinemas.html" id="cinemas">Cinemas</a>
+                    <a href="eventsandexp.html" id="eventsandexp">Events and Experiences</a>
+                </nav>
+            </div>
+            <div class="nav-right">
+                <a href="#notification"><img src="../pics/notif (1).png" id="notifBox" alt="Notifications"></a>
+                <a href="profile"><img src="../pics/profile (1).png" id="profileBox" alt="Profile"></a>
+            </div>
+        </div>
+        
+    <div class="ticket">
+        <h1>Thank You for Booking!</h1>
+        <p>Your booking has been confirmed. Please review your ticket details below.</p>
+
+        <div class="ticket-details">
+            <p><strong>Location:</strong> <span id="location"></span></p>
+            <p><strong>Day:</strong> <span id="day"></span></p>
+            <p><strong>Month:</strong> <span id="month"></span></p>
+            <p><strong>Date:</strong> <span id="date"></span></p>
+            <p><strong>Show Time:</strong> <span id="showTime"></span></p>
+            <p><strong>Ticket Number:</strong> <span id="ticketNumber"></span></p>
+        </div>
+
+        <button onclick="downloadTicket()">Download Ticket</button>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        document.getElementById('location').textContent = urlParams.get('location');
+        document.getElementById('day').textContent = urlParams.get('day');
+        document.getElementById('month').textContent = urlParams.get('month');
+        document.getElementById('date').textContent = urlParams.get('date');
+        document.getElementById('showTime').textContent = urlParams.get('showTime');
+        document.getElementById('ticketNumber').textContent = urlParams.get('ticketNumber');
+
+        function downloadTicket() {
+            const ticketContent = `
+            Location: ${urlParams.get('location')}
+            Day: ${urlParams.get('day')}
+            Month: ${urlParams.get('month')}
+            Date: ${urlParams.get('date')}
+            Show Time: ${urlParams.get('showTime')}
+            Ticket Number: ${urlParams.get('ticketNumber')}
+            `;
+            const blob = new Blob([ticketContent], { type: 'text/plain' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = `Ticket_${urlParams.get('ticketNumber')}.txt`;
+            link.click();
+        }
+    </script>
+</body>
+</html>
