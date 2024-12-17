@@ -1,5 +1,4 @@
 
-Copy code
 # Online Movie Booking System
 
 ## Description
