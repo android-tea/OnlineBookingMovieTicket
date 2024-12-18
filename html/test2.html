@@ -14,6 +14,7 @@
         <p><strong>Month:</strong> <span id="month"></span></p>
         <p><strong>Date:</strong> <span id="date"></span></p>
         <p><strong>Show Time:</strong> <span id="showTime"></span></p>
+        <p><strong>Price: P</strong> <span id="price"></span></p>
 
         <div class="buttons">
             <button onclick="goBack()">Edit Details</button>
@@ -29,6 +30,8 @@
         document.getElementById('month').textContent = urlParams.get('month');
         document.getElementById('date').textContent = urlParams.get('date');
         document.getElementById('showTime').textContent = urlParams.get('showTime');
+        const price = urlParams.get('price');
+        document.getElementById('price').textContent = price;
 
         function goBack() {
             // Redirect back to the input page
@@ -40,7 +43,7 @@
             const ticketNumber = Math.floor(Math.random() * 900000) + 100000;
 
             // Redirect to final ticket receipt page
-            const queryString = `?location=${urlParams.get('location')}&day=${urlParams.get('day')}&month=${urlParams.get('month')}&date=${urlParams.get('date')}&showTime=${urlParams.get('showTime')}&ticketNumber=${ticketNumber}`;
+            const queryString = `?location=${urlParams.get('location')}&day=${urlParams.get('day')}&month=${urlParams.get('month')}&date=${urlParams.get('date')}&showTime=${urlParams.get('showTime')}&ticketNumber=${ticketNumber}&price=${encodeURIComponent(price)}`;
             window.location.href = `ticket_receipt.html${queryString}`;
         }
     </script>

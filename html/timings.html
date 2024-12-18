@@ -30,18 +30,15 @@
         </div>
         
         <!-- Main Form -->
+
+        <div>
+            
+        </div>
         <form id="timingsForm" onsubmit="redirectToConfirmation(event)" class="timings-form">
+           <div>
             <div class="timings">
-                <div class="movie-type">
-                    <button type="button" onclick="toggleActive(this)" class="general">GENERAL</button>
-                    <button type="button" onclick="toggleActive(this)" class="2D">2D</button>
-                    <button type="button" onclick="toggleActive(this)" class="3D">3D</button>
-                    <button type="button" onclick="toggleActive(this)" class="IMAX">IMAX</button>
-                    <button type="button" onclick="toggleActive(this)" class="ScreenX">ScreenX</button>
-                    <button type="button" onclick="toggleActive(this)" class="4DX">4DX</button>
-                </div>
-        
-                <br><br>
+                <h2>Schedule</h2>
+                <br>
                 <div class="location">
                     <label for="location">Location</label>
                     <select id="location" name="location" required>
@@ -147,15 +144,211 @@
                         <button type="button" onclick="setShowTime('7:00 PM')" class="time-option">7:00 PM</button>
                     </div>
                     <input type="hidden" id="showTime" name="showTime" required>
+
+
+                    
+                <div class="seat-type">
+                    <label for="seatType">For confirmation of Seat Type: </label>
+                    <select id="seatType" name="seatType" onchange="updatePrice()" required>
+                        <option value="">Choose Seat Type</option>
+                        <option value="350">VIP (₱350)</option>
+                        <option value="250">Accessible Seat (₱250)</option>
+                        <option value="270">Standard (₱270)</option>
+                    </select>
                 </div>
 
-                
+                 <!--SELECTING SEAT-->
+<div>
+    <body2>
+        <div class="movie-container">
+            <label>Select a Seat(s): </label>
+           
+       </div>
+
+       <ul class="showcase">
+           <li>
+               <div class="seat"></div>
+               <small>Available</small>
+           </li>
+           <li>
+               <div class="seat selected"> </div>
+               <small>Selected</small>
+              
+           </li>
+           <li>
+               <div class="seat sold"></div>
+               <small>Sold</small>
+           </li>
+           <li>
+             <div class="seat vip"></div>
+             <small>VIP</small>
+           </li>
+           <li>
+            <div class="seat accessible"></div>
+            <small>Accessible</small>
+           </li>
+       </ul>
+
+       <div class="container">
+
+           <div class="row VIP">
+               <div class="seat vip" data-value="350"></div>
+               <div class="seat vip" data-value="350"></div>
+               <div class="seat vip" data-value="350"></div>
+               <div class="seat vip" data-value="350"></div>
+               <div class="seat vip" data-value="350"></div>
+               <div class="seat vip" data-value="350"></div>
+               <div class="seat vip" data-value="350"></div>
+               <div class="seat vip" data-value="350"></div>
+           </div>
+
+           
+           <div class="row">
+            <div class="seat" data-value="270"></div>
+            <div class="seat" data-value="270"></div>
+            <div class="seat" data-value="270"></div>
+            <div class="seat" data-value="270"></div>
+            <div class="seat sold"></div>
+           <div class="seat" data-value="270"></div>
+           <div class="seat" data-value="270"></div>
+           <div class="seat sold"></div>
+           </div>
+
+           <div class="row">
+            <div class="seat" data-value="270"></div>
+            <div class="seat" data-value="270"></div>
+            <div class="seat" data-value="270"></div>
+            <div class="seat sold"></div>
+            <div class="seat" data-value="270"></div>
+            <div class="seat sold"></div>
+            <div class="seat" data-value="270"></div>
+            <div class="seat" data-value="270"></div>
+        </div>
+
+         
+        <div class="row">
+            <div class="seat" data-value="270"></div>
+            <div class="seat" data-value="270"></div>
+            <div class="seat" data-value="270"></div>
+            <div class="seat" data-value="270"></div>
+            <div class="seat" data-value="270"></div>
+            <div class="seat sold"></div>
+            <div class="seat"></div>
+            <div class="seat sold"></div>
+        </div>
+
+         
+        <div class="row">
+            <div class="seat" data-value="270"></div>
+            <div class="seat" data-value="270"></div>
+            <div class="seat" data-value="270"></div>
+            <div class="seat sold"></div>
+            <div class="seat" data-value="270"></div>
+            <div class="seat" data-value="270"></div>
+            <div class="seat" data-value="270"></div>
+            <div class="seat" data-value="270"></div>
+        </div>
+
+             
+        <div class="row">
+            <div class="seat accessible" data-value="250"></div>
+            <div class="seat accessible"data-value="250"></div>
+            <div class="seat accessible"data-value="250"></div>
+            <div class="seat accessible"data-value="250"></div>
+            <div class="seat accessible"data-value="250"></div>
+            <div class="seat accessible"data-value="250"></div>
+            <div class="seat accessible"data-value="250"></div>
+            <div class="seat accessible"data-value="250"></div>
+        </div>
+
+       </div>
+
+       <p class="text">
+            <span id="count">0</span> Ticket(s)   P
+            <span id="total">P</span>
+       </p>
+
+    </body2>
+    </div>
+        
+</div>
+
+ </div>
             </div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('.container');
+    const seats = document.querySelectorAll('.row .seat:not(.sold)');
+    const count = document.getElementById('count');
+    const total = document.getElementById('total');
+    const seatType = document.getElementById('seatType');
+    const showTimeInput = document.getElementById('showTime');
+
+    const seatPrices = { vip: 350, accessible: 250, default: 270 };
+    let selectedSeats = [];
+
+    function updateSummary() {
+        const seatCount = selectedSeats.length;
+        const totalAmount = selectedSeats.reduce((sum, seat) => {
+            const type = seat.classList.contains('vip')
+                ? 'vip'
+                : seat.classList.contains('accessible')
+                ? 'accessible'
+                : 'default';
+            return sum + seatPrices[type];
+        }, 0);
+
+        count.textContent = seatCount;
+        total.textContent = totalAmount.toLocaleString('en-PH', { style: 'currency', currency: 'PHP' });
+    }
+
+    container.addEventListener('click', (e) => {
+        if (e.target.classList.contains('seat') && !e.target.classList.contains('sold')) {
+            e.target.classList.toggle('selected');
+            if (e.target.classList.contains('selected')) {
+                selectedSeats.push(e.target);
+            } else {
+                selectedSeats = selectedSeats.filter((s) => s !== e.target);
+            }
+            updateSummary();
+        }
+    });
+
+    seatType.addEventListener('change', () => {
+        const selectedSeats = document.querySelectorAll('.row .seat.selected');
+        selectedSeats.forEach((seat) => {
+            seat.classList.remove('selected');
+        });
+        selectedSeats.length = 0;
+        updateSummary();
+    });
+
+    function toggleActive(button) {
+        const buttons = button.parentNode.querySelectorAll('button');
+        buttons.forEach((btn) => btn.classList.remove('active'));
+        button.classList.add('active');
+    }
+
+    function setShowTime(time) {
+        showTimeInput.value = time;
+    }
+
+    window.toggleActive = toggleActive;
+    window.setShowTime = setShowTime;
+
+    updateSummary();
+});
+
+
+</script>
+
+
+            
             
             <!-- Footer -->
             <footer>
                 <div class="button-container">
-                    <button type="submit" class="btn btn-primary">Next</button>
+                    <button onclick="location.href='Schedule.html'" class="btn btn-primary">Next</button>
                </div>
             </footer>
         </form>
@@ -167,19 +360,42 @@
             document.getElementById('showTime').value = time;
         }
 
-        // Redirect to confirmation page with URL parameters
-        function redirectToConfirmation(event) {
-            event.preventDefault();
+    function redirectToConfirmation(event) {
+        event.preventDefault();
 
-            const location = document.getElementById('location').value;
-            const day = document.getElementById('Day').value;
-            const month = document.getElementById('Month').value;
-            const date = document.getElementById('Date').value;
-            const showTime = document.getElementById('showTime').value;
+        const location = document.getElementById('location').value;
+        const day = document.getElementById('Day').value;
+        const month = document.getElementById('Month').value;
+        const date = document.getElementById('Date').value;
+        const showTime = document.getElementById('showTime').value;
+        const price = document.getElementById('seatType').value; // Get the price directly
 
-            const queryString = `?location=${encodeURIComponent(location)}&day=${encodeURIComponent(day)}&month=${encodeURIComponent(month)}&date=${encodeURIComponent(date)}&showTime=${encodeURIComponent(showTime)}`;
-            window.location.href = `test2.html${queryString}`;
+        const queryString = `?location=${encodeURIComponent(location)}&day=${encodeURIComponent(day)}&month=${encodeURIComponent(month)}&date=${encodeURIComponent(date)}&showTime=${encodeURIComponent(showTime)}&price=${encodeURIComponent(price)}`;
+        window.location.href = `test2.html${queryString}`;
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
     </script>
 
 </body>
