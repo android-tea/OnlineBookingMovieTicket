@@ -1,0 +1,747 @@
+body {
+    margin: 4px;
+    background: linear-gradient(
+        to right,
+        rgb(21, 21, 21),
+        rgb(44, 3, 3)
+    );
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: rgb(204, 6, 6);
+    padding: 10px 10px;
+    width: 100%;
+    height: 40px;
+    position: fixed;
+    top: 0;
+    z-index: 1000; /* Ensure navbar stays on top */
+    margin-bottom: 30%;
+}
+
+/* Container for navbar items */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 120px;
+    height: 80px;
+    margin-right: 5px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    margin: 0 18px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+nav a:hover {
+    background-color: black; /* Change background to black when hovered */
+    color: white; /* Ensure text color stays white on hover */
+}
+#notifBox {
+    width: 30px !important;
+    height: 30px !important;
+    margin-left: auto !important;
+    object-fit: cover !important;
+    position: absolute;
+    top: 20px;
+    right: 60px; /* Adjusted to separate from profile box */
+}
+
+#profileBox {
+    width: 30px !important;
+    height: 30px !important;
+    margin-left: auto !important;
+    object-fit: cover !important;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#notifBox:hover {
+    filter: brightness(3.7);
+    -webkit-filter: brightness(3.7);
+}
+
+/*----KUNG NASAAN KANG PAGE, doon may bg black----*/
+#home {
+    background-color: black;
+}
+
+
+
+#profileBox:hover {
+    filter: brightness(1.2);
+    -webkit-filter: brightness(1.2);
+}
+
+/* Right side of navbar */
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Make the navigation responsive */
+@media (max-width: 768px) {
+    nav {
+        display: none; /* Hide the nav links on small screens */
+    }
+
+    .nav-left img {
+        width: 90px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        height: auto;
+        padding: 15px;
+    }
+
+    nav a {
+        margin: 0 10px;
+    }
+
+    .footer-col {
+        width: 50%;
+    }
+}
+
+@media (max-width: 574px) {
+    .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        width: 100px;
+        height: 60px;
+    }
+
+    .nav-right {
+        margin-top: 10px;
+    }
+}
+
+/* Footer Styles */
+.footer {
+    box-sizing: border-box;
+    background-color: black;
+    padding: 70px 0;
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col h4::before {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbb;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #ffffff;
+    padding-left: 8px;
+}
+
+.footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+    color: #24262b;
+    background-color: #ffffff;
+}
+
+/* Responsive Styles */
+@media (max-width: 574px) {
+    .footer-col {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+
+
+
+
+.poster-content {
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden; /* Hide the horizontal scrollbar */
+    white-space: nowrap;
+    padding: 10px;
+    position: relative;
+    transition: transform 0.3s ease; /* Smooth scroll effect */
+}
+
+.poster-content img {
+    width: 70%;
+    height: auto;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+@media (max-width: 768px) {
+    .poster-content img {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .poster-content img {
+        width: 100%;
+    }
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000;
+    pointer-events: auto; /* Ensure buttons are clickable */
+}
+
+.arrow-left {
+    left: 0;
+    z-index: 1000;
+    margin-left: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow to the arrow */
+}
+
+.arrow-right {
+    right: 0;
+    z-index: 1000;
+    margin-left: 1300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow to the arrow */
+}
+
+@media (max-width: 1200px) {
+    .arrow-left {
+        margin-left: 200px;
+    }
+
+    .arrow-right {
+        margin-left: 1000px;
+    }
+}
+
+@media (max-width: 992px) {
+    .arrow-left {
+        margin-left: 150px;
+    }
+
+    .arrow-right {
+        margin-left: 800px;
+    }
+}
+
+@media (max-width: 768px) {
+    .arrow-left {
+        margin-left: 100px;
+    }
+
+    .arrow-right {
+        margin-left: 600px;
+    }
+}
+
+@media (max-width: 576px) {
+    .arrow-left {
+        margin-left: 50px;
+    }
+
+    .arrow-right {
+        margin-left: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .arrow-left {
+        margin-left: 20px;
+    }
+
+    .arrow-right {
+        margin-left: 200px;
+    }
+}
+
+.welcometext {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 5%;
+    margin-left: 9%;
+}
+
+.dark-line {
+    border: none;
+    border-color: 1px solid rgb(42, 9, 9);
+    margin: 10px 0;
+}
+
+section h2 {
+    margin-left: 5%;
+    margin-top: 5%;
+    color: white;
+}
+
+/* Quote Container */
+.quote-container {
+    background-color: rgba(199, 0, 0, 0.85); /* Slightly increase opacity */
+    color: white;
+    padding: 30px; /* Increase padding for better spacing */
+    border-radius: 20px; /* Increase border radius for smoother corners */
+    max-width: 1200px; /* Adjust max-width for better fit */
+    margin: 40px auto; /* Center the container and add vertical margin */
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6); /* Add shadow with more blur and opacity */
+    font-family: 'Poppins', sans-serif; /* Use Poppins font for better readability */
+    font-size: 20px; /* Increase font size for better readability */
+    line-height: 1.6; /* Increase line height for better spacing */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add smooth transition for hover effects */
+}
+
+.quote-container:hover {
+    transform: scale(1.02); /* Slightly scale up on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7); /* Enhance shadow on hover */
+}
+
+quote {
+    font-size: 60px;
+    margin: 0;
+}
+
+.book-now-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.book-now-button:hover {
+    background-color: #444;
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .quote-container {
+        padding: 20px; /* Adjust padding for smaller screens */
+        font-size: 18px; /* Adjust font size for smaller screens */
+    }
+
+    quote {
+        font-size: 50px; /* Adjust font size for smaller screens */
+    }
+
+    .book-now-button {
+        padding: 8px 16px; /* Adjust padding for smaller screens */
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .quote-container {
+        padding: 15px; /* Adjust padding for smaller screens */
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
+
+    quote {
+        font-size: 40px; /* Adjust font size for smaller screens */
+    }
+
+    .book-now-button {
+        padding: 6px 12px; /* Adjust padding for smaller screens */
+        font-size: 12px; /* Adjust font size for smaller screens */
+    }
+}
+
+/* Body Content */
+.bodycontent {
+    max-width: 800px;
+    margin: 90px auto;
+    padding: 17px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+.bodycontent::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .bodycontent {
+        flex-wrap: wrap;
+        padding: 10px;
+        margin: 50px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .bodycontent {
+        margin: 30px auto;
+        padding: 5px;
+    }
+}
+
+/* Movie Poster */
+.movie-poster {
+    color: white;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 14%;
+    margin: 50px;
+}
+
+.movie-poster img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 20px; 
+    margin: 5px;
+    transition: box-shadow 0.3s ease, filter 0.3s ease, border 0.3s ease;
+}
+
+.movie-poster img:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    filter: brightness(1.2);
+    border: 3px solid #550303;
+}
+
+@media (max-width: 1200px) {
+    .movie-poster {
+        flex: 0 0 20%;
+        margin: 40px;
+    }
+
+    .movie-poster img {
+        width: 140%;
+        height: 250px;
+    }
+}
+
+@media (max-width: 992px) {
+    .movie-poster {
+        flex: 0 0 25%;
+        margin: 30px;
+    }
+
+    .movie-poster img {
+        width: 120%;
+        height: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    .movie-poster {
+        flex: 0 0 45%;
+        margin: 20px;
+    }
+
+    .movie-poster img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .movie-poster {
+        flex: 0 0 100%;
+        margin: 10px 0;
+    }
+
+    .movie-poster img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Navigation Button */
+.navButton {
+    background-color: rgb(204, 6, 6);
+    color: #fff;
+    border: none;
+    padding: 15px 45px;
+    font-size: 13px;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: 8%;
+    border-radius: 7%;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+@media (max-width: 768px) {
+    .book-now-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .bodycontent {
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+
+    .movie-poster {
+        flex: 0 0 45%;
+        margin: 20px;
+    }
+
+    .movie-poster img {
+        width: 100%;
+        height: auto;
+    }
+
+    .navButton {
+        padding: 10px 30px;
+        font-size: 12px;
+        margin-left: 5%;
+    }
+}
+
+@media (max-width: 480px) {
+    .book-now-button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    .bodycontent {
+        margin: 50px auto;
+        padding: 5px;
+    }
+
+    .movie-poster {
+        flex: 0 0 100%;
+        margin: 10px 0;
+    }
+
+    .movie-poster img {
+        width: 100%;
+        height: auto;
+    }
+
+    .navButton {
+        padding: 8px 20px;
+        font-size: 10px;
+        margin-left: 2%;
+    }
+}
+
+.navButton:hover {
+    background-color: #444;
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+/* Movie Row Scrollbar */
+.movie-row::-webkit-scrollbar {
+    height: 8px;
+}
+
+.movie-row::-webkit-scrollbar-thumb {
+    background: rgba(204, 6, 6, 0.7);
+    border-radius: 10px;
+}
+
+.movie-row::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Footer */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+.container {
+    max-width: 1170px;
+    margin: auto;
+    padding: 0 15px; /* Add padding for better spacing */
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px; /* Adjust margin for better spacing */
+}
+
+ul {
+    list-style: none;
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+
+    .row {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+/* modal / coming soon button */
+#comingSoonModal {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #comingSoonModal .modal-content {
+        width: 90%;
+        padding: 15px;
+    }
+
+    #comingSoonModal .close-button {
+        padding: 4px 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    #comingSoonModal .modal-content {
+        width: 95%;
+        padding: 10px;
+    }
+
+    #comingSoonModal .close-button {
+        padding: 3px 6px;
+    }
+}
+
+.modal-content {
+    background-color: rgb(255, 255, 255);
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 300px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.close-button {
+    background-color: #550303;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .close-button {
+        padding: 4px 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .close-button {
+        padding: 3px 6px;
+    }
+}

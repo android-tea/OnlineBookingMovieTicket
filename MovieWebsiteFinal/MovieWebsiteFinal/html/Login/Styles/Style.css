@@ -1,0 +1,666 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+.grid__container{
+    display: grid;
+    grid-template-rows: 61px 1fr ;
+    /* grid-template-columns: 300px 1fr; */
+    grid-template-areas:  
+    'navbar'
+    'main'
+    ;
+
+    height: 100vh;
+    width: 100%;
+}
+
+/* Main navbar */
+
+.navbar{
+    grid-area: navbar;
+    display: flex;
+    height: 61px;
+    background-color: rgb(181, 24, 24);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar__container{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin: 0 21px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar__menu{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    list-style: none;
+}
+
+
+
+/* .navbar__logo{
+    background-image: url(/Images/logo.png);
+} */
+
+.navbar__links{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 61px;
+}
+
+.navbar__searchbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px;
+    border-radius: 6px;
+    background-color: white;
+    height: 80%;
+    max-width:400px ;
+    width: 100%;
+}
+
+#navbar__searchbox{
+    font-size: 16px;
+    border: none;
+    padding: 9px;
+    width: 100%;
+}
+
+#navbar__searchbutton{
+    object-fit: cover;
+    width: 27px;
+    height: 25px;
+    margin: 0 5px;
+}
+
+.navbar__icons{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 80%;
+    
+}
+
+
+
+.notif__list{
+display: none;
+list-style: none;
+position: fixed;
+background: #fff;
+top: 61px;
+right: 0px;
+width: 399px;
+border-radius: 9px;
+box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+z-index: 1000;
+
+}
+
+.notif__item{
+padding: 12px 6px;
+margin: 12px;
+border-bottom: 1px solid #141414;
+font-size: 1rem;
+}
+
+.notification li:last-child{
+border-bottom: none;
+}
+
+#navbar__notification{
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    cursor: pointer ;
+}
+
+#navbar__profile{
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    margin-left:11px;
+    cursor: pointer ;
+}
+
+/* OLD Dashboard Navigation */
+
+/* .dbnavbar{
+    grid-area: sidebar;
+    display: flex;
+    flex: column;
+    flex-grow: 1;
+    width: 300px;
+    background-color: rgb(181, 24, 24);
+}
+
+.dbnavbar__container{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+   
+}
+
+#dbnavbar__header{
+    display: flex;
+    font-size: 3rem;
+    padding: 21px 30px;
+    border-bottom-style: ridge;
+    border-color: #fff;
+    color: #fff;
+}
+
+
+.dbnavbar__menu{
+    display: flex;
+    flex-direction: column;
+    padding: 21px 36px;
+    list-style: none;
+}
+
+.dbnavbar__items{
+   
+}
+.dbnavbar__links{
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+    padding: 11px 0;
+    font-size: 1.1rem;
+} */
+
+/* OLD Main section */
+
+/* .dbmain{
+    grid-area: main;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas: 
+    'sales sales sales sales sales sales insights insights'
+    'sales sales sales sales sales sales insights insights'
+    'products products products products products target target target'
+    'products products products products products satisfaction satisfaction satisfaction'
+   ;
+    height: 100%;
+    background: #141414;
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+
+
+.dbmain__container--sales,
+.dbmain__container--insights,
+.dbmain__container--target,
+.dbmain__container--products,
+.dbmain__container--satisfaction{
+    display: flex;
+    background: #fff;
+    border-radius: 16px;
+    height: 100%;
+    width: 100%;
+    padding: 2rem;
+}
+
+.dbmain__container--sales{
+    grid-area: sales;
+   
+}
+
+.dbmain__container--insights{
+    grid-area: insights;
+}
+
+.dbmain__container--target{
+    grid-area: target;
+}
+
+.dbmain__container--products{
+    grid-area: products;
+}
+
+.dbmain__container--satisfaction{
+    grid-area: satisfaction;
+} */
+
+
+
+/* New Main Section */--------------------------------------------------------------------------------
+
+
+.main-container {
+    grid-area: main;
+    overflow-y: auto;
+    padding: 20px 20px;
+    color: rgba(255, 255, 255, 0.95);
+    background: #190000;
+  }
+  
+  .main-title {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .main-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    margin: 20px 0;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 25px;
+    border-radius: 5px;
+  }
+  
+  .card:first-child {
+    background-color: #5f3939;
+  }
+  
+  .card:nth-child(2) {
+    background-color: #5f3939;
+  }
+  
+  .card:nth-child(3) {
+    background-color: #5f3939;
+  }
+  
+  .card:nth-child(4) {
+    background-color: #5f3939  ;
+  }
+  
+  .card-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .card-inner > .material-icons-outlined {
+    font-size: 45px;
+  }
+
+/* Charts */---------------------------------------------------------------------
+
+.charts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px; 
+    margin-top: 60px;
+  }
+  
+  .charts-card {
+    background-color:  #442b2b;
+    margin-bottom: 20px;
+    padding: 25px;
+    box-sizing: border-box;
+    -webkit-column-break-inside: avoid;
+    border-radius: 5px;
+    box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .chart-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Reset Password Page CSS */--------------------------------------------------------
+
+  .resetPass--container{
+    height: 100vh;
+    background-size: cover;
+    background-image: url(/Images/BG--Sign\ in.jpg);
+    background-repeat: no-repeat;
+    
+  }
+
+  .card--container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .login-nav{
+    display: flex;
+    height: 61px;
+    background-color: rgb(181, 24, 24);
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+   
+  }
+
+  .backToLogin{
+    margin: 0 10px;
+    height: 30px;
+    width: 30;
+  }
+
+  .LOGO{
+    margin: 0 10px;
+    height: 50px;
+    width: 50;
+  }
+
+  .resetPass--card{
+    display: flex;  
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding: 36px;
+    background: #fff;
+    border-radius: 12px;
+  }
+
+  .resetPass__header{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    
+  }
+
+  .resetPass__header p{
+    margin-top: 12px;
+    color: #555;
+  }
+
+
+  .resetPass__input{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+    width: 100%;
+
+  }
+
+  .resetPass__inputBar{
+    display: flex;
+    margin-top: 13px;
+    width: 350px;
+    border: 1px solid #c9c9c9 ;
+    border-radius: 6px;
+    align-items: center;
+  }
+
+  .resetPass__inputBar img{
+    height: 13px;
+    width: 20px;
+    cursor: pointer;
+    margin: 0 12px;
+  }
+
+  .resetPass__newPass{
+    font-size:  1rem;
+    border: none ;
+    padding: 16px;
+    width: 100%;
+    outline: none;
+    border-radius: 6px;
+
+  }
+
+  .resetPass__button{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(181, 24, 24) ;
+    padding: 16px;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+    margin: 19px 0 56px;
+    cursor: pointer;
+
+
+  }
+
+  .resetPass__footer{
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+    color: #555;
+
+  }
+
+  .resetPass__footer a{
+    display: flex;
+    text-decoration: none;
+    color: #141414;
+   
+  }
+
+
+
+  /* Forgot Password CSS */------------------------------------------------
+
+
+  .forgotPass--container{
+    height: 100vh;
+    background-size: cover;
+    background-image: url(../Images/BG.jpg);
+    background-repeat: no-repeat;
+    
+  }
+
+  .forgotPass__card--container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  
+  .forgotPass__header{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    
+  }
+
+  .forgotPass__header p{
+    display: flex;
+    margin-top: 12px;
+    color: #555;
+    font-size: 15px;
+  }
+
+
+  
+  .forgotPass--card{
+    display: flex;  
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding: 36px;
+    background: #fff;
+    border-radius: 12px;
+    max-width: 400px;
+  }
+
+  .forgotPass__input{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+    width: 100%;
+
+
+  }
+
+  .forgotPass__inputBar{
+    display: flex;
+    margin-top: 13px;
+    width: 100%;
+    border: 1px solid #c9c9c9 ;
+    border-radius: 6px;
+    align-items: center;
+  }
+
+
+  .forgotPass__email{
+    font-size:  1rem;
+    border: none ;
+    padding: 16px;
+    width: 100%;
+    outline: none;
+    border-radius: 6px;
+
+  }
+
+
+  .forgetPass__button{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(181, 24, 24) ;
+    padding: 16px;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+    margin: 19px 0 0;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 15px;
+
+
+  }
+
+
+  /* Check Email Webpage CSS */---------------------------------------------
+
+  
+  .checkEmail--container{
+    height: 100vh;
+    background-size: cover;
+    background-image: url(../Images/BG.jpg);
+    background-repeat: no-repeat;
+    
+  }
+
+  
+  .checkEmail__header{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    
+    
+  }
+
+  .checkEmail__header p{
+    display: flex;
+    margin-top:30px;
+    color: #555;
+    font-size: 15px;
+  }
+
+  .checkEmail__header b{
+    margin-left: 7px;
+  }
+
+  
+  .checkEmail--card{
+    display: flex;  
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding: 36px;
+    background: #fff;
+    border-radius: 12px;
+    max-width: 600px;
+  }
+
+  .checkEmail__input{
+    display: flex;
+    margin-bottom: 12px;
+    width: 100%;
+
+
+  }
+
+  .checkEmail__inputBar{
+    display: flex;
+    margin: 13px 60px;
+    width: 100%;
+    align-items: center;
+    gap: 49px;
+  }
+
+
+  .checkEmail__box{
+    font-size:  1rem;
+    border: 1px solid #c9c9c9 ;
+    padding: 16px;
+    width: 100%;
+    outline: none;
+    border-radius: 6px;
+
+  }
+
+
+  .checkEmail__button{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(181, 24, 24) ;
+    padding: 16px;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+    margin: 19px 0;
+    cursor: pointer;
+
+
+  }
+
+  .checkEmail__footer{
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+    color: #555;
+    margin-top: 20px;
+
+  }
+
+  .checkEmail__footer a{
+    display: flex;
+    text-decoration: none;
+    color: #141414;
+   
+  }

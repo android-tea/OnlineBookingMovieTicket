@@ -1,0 +1,191 @@
+body {
+    margin: 0;
+    background: url('confetti.bg.png') no-repeat center center; 
+    background-size: cover; 
+    background-attachment: fixed; 
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    margin-top: 50px; /* Add some margin at the top of the body */
+}
+
+
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: rgb(204, 6, 6);
+    padding: 10px 10px;
+    width: 100%;
+    height: 40px;
+    position: fixed;
+    top: 0;
+    z-index: 1000; /* Ensure navbar stays on top */
+    margin-bottom: 30%;
+}
+
+/* Container for navbar items */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 120px;
+    height: 80px;
+    margin-right: 5px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    margin: 0 18px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+nav a:hover {
+    background-color: black; /* Change background to black when hovered */
+    color: white; /* Ensure text color stays white on hover */
+}
+#notifBox {
+    width: 30px !important;
+    height: 30px !important;
+    margin-left: auto !important;
+    object-fit: cover !important;
+    position: absolute;
+    top: 20px;
+    right: 60px; /* Adjusted to separate from profile box */
+}
+
+#profileBox {
+    width: 30px !important;
+    height: 30px !important;
+    margin-left: auto !important;
+    object-fit: cover !important;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#notifBox:hover {
+    filter: brightness(3.7);
+    -webkit-filter: brightness(3.7);
+}
+
+/*----KUNG NASAAN KANG PAGE, doon may bg black----*/
+#home {
+    background-color: black;
+}
+
+
+
+#profileBox:hover {
+    filter: brightness(1.2);
+    -webkit-filter: brightness(1.2);
+}
+
+/* Right side of navbar */
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Make the navigation responsive */
+@media (max-width: 768px) {
+    nav {
+        display: none; /* Hide the nav links on small screens */
+    }
+
+    .nav-left img {
+        width: 90px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        height: auto;
+        padding: 15px;
+    }
+
+    nav a {
+        margin: 0 10px;
+    }
+
+    .footer-col {
+        width: 50%;
+    }
+}
+
+@media (max-width: 574px) {
+    .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        width: 100px;
+        height: 60px;
+    }
+
+    .nav-right {
+        margin-top: 10px;
+    }
+}
+
+.ticket {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid #ff9808;
+    border-radius: 10px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 190px; /* Added margin-top */
+}
+
+.download-button {
+    background-color: red; /* Red background for download button */
+    color: white;
+    padding: 20px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: white;
+    background-color: rgb(204,6,6);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: black;
+}

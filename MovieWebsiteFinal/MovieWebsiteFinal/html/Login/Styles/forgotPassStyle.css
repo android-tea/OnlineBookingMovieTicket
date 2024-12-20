@@ -1,0 +1,122 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.login-nav{
+    display: flex;
+    height: 61px;
+    background-color: rgb(181, 24, 24);
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.backToLogin{
+    margin: 0 10px;
+    height: 30px;
+    width: 30;
+  }
+
+  .LOGO{
+    margin: 0 10px;
+    height: 50px;
+    width: 50;
+  }
+
+.forgotPass--container{
+    height: 100vh;
+    background-size: cover;
+    background-image: url(../Images/BG.jpg);
+    background-repeat: no-repeat;
+    
+  }
+
+  .forgotPass__card--container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  
+  .forgotPass__header{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    
+  }
+
+  .forgotPass__header p{
+    display: flex;
+    margin-top: 12px;
+    color: #555;
+    font-size: 15px;
+  }
+
+
+  
+  .forgotPass--card{
+    display: flex;  
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding: 36px;
+    background: #fff;
+    border-radius: 12px;
+    max-width: 400px;
+  }
+
+  .forgotPass__input{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+    width: 100%;
+
+
+  }
+
+  .forgotPass__inputBar{
+    display: flex;
+    margin-top: 13px;
+    width: 100%;
+    border: 1px solid #c9c9c9 ;
+    border-radius: 6px;
+    align-items: center;
+  }
+
+
+  .forgotPass__email{
+    font-size:  1rem;
+    border: none ;
+    padding: 16px;
+    width: 100%;
+    outline: none;
+    border-radius: 6px;
+
+  }
+
+
+  .forgetPass__button{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(181, 24, 24) ;
+    padding: 16px;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+    margin: 19px 0 0;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 15px;
+
+
+  }
